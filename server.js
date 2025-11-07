@@ -7,7 +7,7 @@ dotenv.config();
 const app = express();
 app.use(cors());
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 const GITHUB_USER = process.env.GITHUB_USER;
 const GITHUB_REPO = process.env.GITHUB_REPO;
@@ -55,3 +55,5 @@ app.get("/api/pdfs", async (req, res) => {
 });
 
 app.listen(PORT, () => console.log(`✅ Servidor rodando em http://localhost:${PORT}`));
+
+
